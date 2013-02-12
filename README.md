@@ -5,9 +5,9 @@ Dieses Projekt ist ein auf Minecraft basierendes Tower Defense Spiel. Bisher ist
 
 Bewegen des Spielers, Rotieren der Kamera per Maus(buggy), Zerstören von Blöcken, Setzen von Blöcken, Generieren von Blöcken mit "z"(buggy).
 
-This project is a Minecraft based tower defense game. Until now it is in the PrePrePreAlpha.
-
 Alle Rechte vorbehalten.
+
+This project is a Minecraft based tower defense game. Until now it is in the PrePrePreAlpha.
 
 Implemented funktions:
 
