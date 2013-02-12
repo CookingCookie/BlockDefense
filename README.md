@@ -1,4 +1,4 @@
-BlockDefense
+﻿BlockDefense
 ============
 
 Dieses Projekt ist ein auf Minecraft basierendes Tower Defense Spiel. Bisher ist es jedoch noch in der PrePrePreAlpha. Bisherige Funktionen:
@@ -11,6 +11,6 @@ This project is a Minecraft based tower defense game. Until now it is in the Pre
 
 Implemented funktions:
 
-Player movement, Camera rotation by mouse(buggy), Destroying blocks, Building blocks, Generate blocks with "z"(buggy).
+Player movement, camera rotation by mouse(buggy), destroying blocks, building blocks, generate blocks with "z"(buggy).
 
 All rights reserved.
