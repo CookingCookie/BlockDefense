@@ -32,7 +32,7 @@ public class CamMovement : MonoBehaviour
 			movementY();
 			if (Input.GetKey(KeyCode.LeftShift))
 		    movement.y--;
-			movementY();
+			movementY();		
 		//}
     }
 	void movementZX()
