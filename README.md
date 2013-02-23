@@ -11,7 +11,9 @@ All rights reserved.
 
 ---German translation/Deutsche Übersetzung---------------------------
 
-Dieses Projekt ist ein auf Minecraft basierendes Tower Defense Spiel. Bisher ist es jedoch noch in der PrePrePreAlpha. Bisherige Funktionen:
+Dieses Projekt ist ein auf Minecraft basierendes Tower Defense Spiel. Bisher ist es jedoch noch in der PrePrePreAlpha. 
+
+Bisherige Funktionen:
 
 Bewegen des Spielers, Rotieren der Kamera per Maus, Zerstören von Blöcken, Setzen von Blöcken, Generieren von Blöcken mit "z"(buggy), neustart mit "o", auswahl verschiedener Blöcke mit dem Mausrad oder den Tasten 1-9.
 
