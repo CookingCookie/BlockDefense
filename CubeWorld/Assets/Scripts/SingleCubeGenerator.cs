@@ -4,6 +4,7 @@ using System.Collections;
 public class SingleCubeGenerator : MonoBehaviour 
 {
 	public CubeSelection m_selectedCube;
+	public ItemQuantity m_itemQuantity;
 	private GameObject m_cubeInstanse;
 	public GameObject m_cubeDirt;
 	public GameObject m_cubeStone;
@@ -14,55 +15,61 @@ public class SingleCubeGenerator : MonoBehaviour
 	public GameObject m_bedrock;
 	public GameObject m_obsidian;
 	public GameObject m_brick;
+	private GameObject m_cube;
 	public int actuallSelectedCube=0;
-	public void GenerateSingleCube(Vector3 cubePos)
-	{
-		actuallSelectedCube = m_selectedCube.GetSelectedCube();
-		if(actuallSelectedCube==0)
+	private bool itemAvailable;	
+	
+	public void CheckGenerateSingleCube(Vector3 cubePos)
+	{		
+		cubesAvailable();
+		if(itemAvailable)
 		{
-			m_cubeInstanse = Instantiate(m_cubeDirt) as GameObject;
-			m_cubeInstanse.transform.position = cubePos;
+			GenerateSingleCube(cubePos);			
 		}
-		if(actuallSelectedCube==1)
+		else
 		{
-			m_cubeInstanse = Instantiate(m_cubeStone) as GameObject;
-			m_cubeInstanse.transform.position = cubePos;
-		}
-		if(actuallSelectedCube==2)
-		{
-			m_cubeInstanse = Instantiate(m_cubeWooden_Planks) as GameObject;
-			m_cubeInstanse.transform.position = cubePos;
-		}
-		if(actuallSelectedCube==3)
-		{
-			m_cubeInstanse = Instantiate(m_copple_stone) as GameObject;
-			m_cubeInstanse.transform.position = cubePos;
-		}
-		if(actuallSelectedCube==4)
-		{
-			m_cubeInstanse = Instantiate(m_gravel) as GameObject;
-			m_cubeInstanse.transform.position = cubePos;
-		}
-		if(actuallSelectedCube==5)
-		{
-			m_cubeInstanse = Instantiate(m_sand) as GameObject;
-			m_cubeInstanse.transform.position = cubePos;
-		}
-		if(actuallSelectedCube==6)
-		{
-			m_cubeInstanse = Instantiate(m_brick) as GameObject;
-			m_cubeInstanse.transform.position = cubePos;
-		}
-		if(actuallSelectedCube==7)
-		{
-			m_cubeInstanse = Instantiate(m_obsidian) as GameObject;
-			m_cubeInstanse.transform.position = cubePos;
-		}
-		if(actuallSelectedCube==8)
-		{
-			m_cubeInstanse = Instantiate(m_bedrock) as GameObject;
-			m_cubeInstanse.transform.position = cubePos;
+			print ("No items available.");
 		}
 	}
-	
+	void cubesAvailable()
+	{
+		actuallSelectedCube = m_selectedCube.GetSelectedCube();
+		itemAvailable = m_itemQuantity.GetItemQuantity(actuallSelectedCube);
+	}	
+	public void GenerateSingleCube(Vector3 cubePos)
+	{
+		actuallSelectedCube = m_selectedCube.GetSelectedCube();		
+		switch (actuallSelectedCube)
+		{
+		case 0:
+			m_cube = m_cubeDirt;			
+			break;
+		case 1:
+			m_cube = m_cubeStone;			
+			break;
+		case 2:
+			m_cube = m_cubeWooden_Planks;			
+			break;
+		case 3:
+			m_cube =m_copple_stone;			
+			break;
+		case 4:
+			m_cube = m_gravel;			
+			break;
+		case 5:
+			m_cube = m_sand;			
+			break;
+		case 6:
+			m_cube = m_brick;			
+			break;
+		case 7:
+			m_cube = m_obsidian;			
+			break;
+		case 8:
+			m_cube = m_bedrock;			
+			break;
+		}
+		m_cubeInstanse = Instantiate(m_cube) as GameObject;
+		m_cubeInstanse.transform.position = cubePos;
+	}	
 }

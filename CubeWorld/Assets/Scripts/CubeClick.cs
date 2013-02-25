@@ -3,14 +3,16 @@ using System.Collections;
 
 public class CubeClick : MonoBehaviour 
 {
-	public SingleCubeGenerator m_cubeGen;
-	//public CubeSelection m_cubeID;
+	public SingleCubeGenerator m_cubeGen;	
+	public DestroyedCube m_destroyedCube;
 	private Ray m_ray;
 	private Camera m_cam;
 	private RaycastHit m_hit;
 	private float m_distance = 5f;
 	private bool m_hitSomething;
-	Vector3 centerVector = new Vector3(Screen.width/2,Screen.height/2,0);
+	private float timeCheck;
+	private Vector3 centerVector = new Vector3(Screen.width/2,Screen.height/2,0);
+	
 	void Start () 
 	{
 		m_cam = Camera.main;
@@ -21,9 +23,10 @@ public class CubeClick : MonoBehaviour
 		{
 			RemoveCube(CheckMouseRay());
 		}
-		if(Input.GetMouseButtonDown(1))
+		if(Input.GetMouseButton(1))
 		{
-			AddCube(CheckMouseRay());
+			timeSinceLastBuildAction();
+			//AddCube(CheckMouseRay());
 		}
 	}	
 	RaycastHit CheckMouseRay()
@@ -44,6 +47,7 @@ public class CubeClick : MonoBehaviour
 		if(m_hitSomething)
 		{
 			Destroy(m_hit.collider.gameObject);
+			print (m_hit.collider.gameObject);
 		}
 	}	
 	void AddCube(RaycastHit cube)
@@ -56,6 +60,16 @@ public class CubeClick : MonoBehaviour
 	void CalculateNewCubePos(RaycastHit cube)
 	{
 		Vector3 NewcubePos = m_hit.normal + m_hit.transform.position;		
-		m_cubeGen.GenerateSingleCube(NewcubePos);
+		m_cubeGen.CheckGenerateSingleCube(NewcubePos);
 	}
+	void timeSinceLastBuildAction()
+	{
+		//float timeReal = Time.realtimeSinceStartup;		
+		if(timeCheck + 0.17F < Time.realtimeSinceStartup)
+		{
+			timeCheck = Time.realtimeSinceStartup;
+			AddCube(CheckMouseRay());
+		}
+	}
+	
 }

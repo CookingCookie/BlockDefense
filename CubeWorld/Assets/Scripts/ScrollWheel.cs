@@ -16,7 +16,7 @@ public class ScrollWheel : MonoBehaviour
 	}
 	void calculateSelectedItem()
 	{
-		if(wheelScrool == 0.1f)
+		if(wheelScrool == -0.1f)
 		{
 			if(selectedItem == 8)
 			{
@@ -27,9 +27,9 @@ public class ScrollWheel : MonoBehaviour
 				selectedItem++;
 			}
 			m_cubeSelection.SetSelectedCube(selectedItem);
-			print("Selected Item =" + selectedItem);
+			//print("Selected Item =" + selectedItem);
 		}
-		if(wheelScrool == -0.1f)
+		if(wheelScrool == 0.1f)
 		{
 			if(selectedItem == 0)
 			{
@@ -40,7 +40,7 @@ public class ScrollWheel : MonoBehaviour
 				selectedItem--;
 			}
 			m_cubeSelection.SetSelectedCube(selectedItem);
-			print("Selected Item =" + selectedItem);
+			//print("Selected Item =" + selectedItem);
 		}
 	}
 }

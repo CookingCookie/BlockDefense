@@ -3,12 +3,13 @@ using System.Collections;
 
 public class CursorLockAndHide : MonoBehaviour 
 {
-	private bool locked; 
+	private bool locked = false; 
 	void Start ()
 	{
-		Screen.lockCursor = true;
-		Screen.showCursor = false;
-		locked = false; 
+		//Screen.lockCursor = true;
+		//Screen.showCursor = false;
+		//locked = false;
+		cursorLock();
 	}
     void Update() 
 	{
@@ -33,5 +34,9 @@ public class CursorLockAndHide : MonoBehaviour
 			Screen.showCursor = false;
 			locked = true;
 		}
+	}
+	public void SetCursorLock()
+	{
+		cursorLock();	
 	}
 }

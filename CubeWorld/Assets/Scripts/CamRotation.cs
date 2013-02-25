@@ -9,10 +9,9 @@ public class CamRotation : MonoBehaviour
 	public float sensivityX = 100f;
 	public float sensivityJY = 170f;
 	public int maxRotationSpeed = 100000;
-	public float threshold = 1f;
-	void FixedUpdate () 
-	{
-		
+	public float threshold = 1f;	
+	void FixedUpdate () 	
+	{		
 		if(Input.GetAxis("Mouse Y") != 0)
 		{
 			yRotation = Input.GetAxis("Mouse Y") * -sensivity;
