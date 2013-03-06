@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ScrollWheel : MonoBehaviour 
 {
-	public CubeSelection m_cubeSelection;
+	public BlockClass m_blockClass;
 	float wheelScrool;
 	int selectedItem = 0;
     void Update()
@@ -26,8 +26,8 @@ public class ScrollWheel : MonoBehaviour
 			{
 				selectedItem++;
 			}
-			m_cubeSelection.SetSelectedCube(selectedItem);
-			//print("Selected Item =" + selectedItem);
+			m_blockClass.SetActuallSelectedCube(selectedItem);
+			
 		}
 		if(wheelScrool == 0.1f)
 		{
@@ -39,8 +39,7 @@ public class ScrollWheel : MonoBehaviour
 			{
 				selectedItem--;
 			}
-			m_cubeSelection.SetSelectedCube(selectedItem);
-			//print("Selected Item =" + selectedItem);
+			m_blockClass.SetActuallSelectedCube(selectedItem);			
 		}
 	}
 }

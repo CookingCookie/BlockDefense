@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CursorLockAndHide : MonoBehaviour 
 {
+	public GUIIngameMenu m_GUIMenu;
 	private bool locked = false; 
 	void Start ()
 	{
@@ -16,6 +17,7 @@ public class CursorLockAndHide : MonoBehaviour
         if (Input.GetKeyDown("escape"))
 		{
 			cursorLock();
+			m_GUIMenu.SetMenuState();
 		}
 	}
 	void cursorLock()

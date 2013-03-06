@@ -4,13 +4,13 @@ using System.Collections;
 public class ItemQuantity : MonoBehaviour {
 	bool itemAvailable = false;	
 	int[] itemQuantity = new int[9];
-	int maxItemQuantity = 10;
+	int maxItemQuantity = 64;
 	
 	void Start()
 	{
 		for(int i=0; i<9;i++)
 		{
-			itemQuantity[i] = 15;
+			itemQuantity[i] = 64;
 		}
 	}		 
 	
@@ -20,13 +20,17 @@ public class ItemQuantity : MonoBehaviour {
 		{
 			itemAvailable = true;
 			itemQuantity[selectedItem]--;
-			print (itemQuantity[selectedItem]);
+			//print (itemQuantity[selectedItem]);
 		}
 		else
 		{
 				itemAvailable = false;
 		}		
 		return itemAvailable;
+	}
+	public int GetIntItemQuantity(int selectedItem)
+	{				
+		return itemQuantity[selectedItem];
 	}
 	public void SetItemQuantity(int selectedItem)
 	{

@@ -5,17 +5,20 @@ public class CubeClick : MonoBehaviour
 {
 	public SingleCubeGenerator m_cubeGen;	
 	public DestroyedCube m_destroyedCube;
+	public BlockClass m_blockClass;
 	private Ray m_ray;
 	private Camera m_cam;
 	private RaycastHit m_hit;
-	private float m_distance = 5f;
+	private float m_maxDistance = 5f;
+	private float m_minDistance = 0f;
 	private bool m_hitSomething;
 	private float timeCheck;
 	private Vector3 centerVector = new Vector3(Screen.width/2,Screen.height/2,0);
+	private int m_item;
 	
 	void Start () 
 	{
-		m_cam = Camera.main;
+		m_cam = Camera.main;		
 	}
 	void Update () 
 	{
@@ -32,7 +35,7 @@ public class CubeClick : MonoBehaviour
 	RaycastHit CheckMouseRay()
 	{
 		m_ray = m_cam.ScreenPointToRay(centerVector);
-		if(Physics.Raycast(m_ray,out m_hit, m_distance))
+		if(Physics.Raycast(m_ray,out m_hit, m_maxDistance) && m_hit.distance >m_minDistance)
 		{
 			m_hitSomething = true;
 		}
@@ -40,6 +43,7 @@ public class CubeClick : MonoBehaviour
 		{
 			m_hitSomething = false;
 		}
+		print ("m_hit = " + m_hit.distance);
 		return m_hit;
 	}	
 	void RemoveCube(RaycastHit cube)
@@ -47,7 +51,9 @@ public class CubeClick : MonoBehaviour
 		if(m_hitSomething)
 		{
 			Destroy(m_hit.collider.gameObject);
-			print (m_hit.collider.gameObject);
+			//print (m_hit.collider.gameObject);
+			m_item = m_destroyedCube.SetDestroyedCube(m_hit.collider.gameObject);			
+			m_blockClass.SetAvailabilityOfCubes(m_item);
 		}
 	}	
 	void AddCube(RaycastHit cube)

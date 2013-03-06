@@ -33,8 +33,8 @@ public class PlayerMovement : MonoBehaviour
 		if (Input.GetKey("space") /*&& onGround == true*/)
 		{		    
 			//checkHeight();
-			//movementUp();
-			m_jumpControl.Jump();
+			movementUp();
+			//m_jumpControl.Jump();
 		}
 	    if (Input.GetKey(KeyCode.LeftShift))
 		{		    
@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
 	void movementForward()
 	{
 		transform.Translate( Vector3.forward * movementSpeed * Time.deltaTime, Space.Self);
+		//rigidbody.AddForce( Vector3.forward * 50 * Time.deltaTime);
 		
 	}
 	void movementBack()
@@ -58,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
 	}
 	void movementRight()
 	{
-		transform.Translate( Vector3.right * movementSpeed * Time.deltaTime, Space.Self);
+		transform.Translate( Vector3.right * movementSpeed * Time.deltaTime, Space.Self);		
 		
 	}	
 	void checkHeight()
