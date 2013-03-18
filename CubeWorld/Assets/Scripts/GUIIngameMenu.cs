@@ -14,18 +14,7 @@ public class GUIIngameMenu : MonoBehaviour
 	private int xLaenge = 500;
 	private int yPosition = (Screen.height/2)-25;
 	private int yLaenge = 50;
-	private bool menuOn = false;
-	
-	void Start () 
-	{
-		//m_cursorLock.SetCursorLock();
-	}
-	
-	
-	void Update () 
-	{
-	
-	}
+	private bool menuOn = false;	
 	public void SetMenuState()
 	{
 		if(menuOn)

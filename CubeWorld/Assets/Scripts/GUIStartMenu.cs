@@ -8,18 +8,7 @@ public class GUIStartMenu : MonoBehaviour
 	private int xLaenge = 500;
 	private int yPosition = (Screen.height/2)-25;
 	private int yLaenge = 50;
-	private bool menuOn = true;
-	
-	void Start () 
-	{
-		
-	}
-	
-	
-	void Update () 
-	{
-	
-	}
+	private bool menuOn = true;	
 	public void SetMenuState()
 	{
 		if(menuOn)

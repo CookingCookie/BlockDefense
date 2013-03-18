@@ -14,8 +14,7 @@ public class CubeClick : MonoBehaviour
 	private bool m_hitSomething;
 	private float timeCheck;
 	private Vector3 centerVector = new Vector3(Screen.width/2,Screen.height/2,0);
-	private int m_item;
-	
+	private int m_item;	
 	void Start () 
 	{
 		m_cam = Camera.main;		
@@ -28,8 +27,7 @@ public class CubeClick : MonoBehaviour
 		}
 		if(Input.GetMouseButton(1))
 		{
-			timeSinceLastBuildAction();
-			//AddCube(CheckMouseRay());
+			timeSinceLastBuildAction();			
 		}
 	}	
 	RaycastHit CheckMouseRay()
@@ -43,15 +41,14 @@ public class CubeClick : MonoBehaviour
 		{
 			m_hitSomething = false;
 		}
-		print ("m_hit = " + m_hit.distance);
+		//print ("m_hit = " + m_hit.distance);
 		return m_hit;
 	}	
 	void RemoveCube(RaycastHit cube)
 	{
 		if(m_hitSomething)
 		{
-			Destroy(m_hit.collider.gameObject);
-			//print (m_hit.collider.gameObject);
+			Destroy(m_hit.collider.gameObject);			
 			m_item = m_destroyedCube.SetDestroyedCube(m_hit.collider.gameObject);			
 			m_blockClass.SetAvailabilityOfCubes(m_item);
 		}
@@ -69,8 +66,7 @@ public class CubeClick : MonoBehaviour
 		m_cubeGen.CheckGenerateSingleCube(NewcubePos);
 	}
 	void timeSinceLastBuildAction()
-	{
-		//float timeReal = Time.realtimeSinceStartup;		
+	{				
 		if(timeCheck + 0.17F < Time.realtimeSinceStartup)
 		{
 			timeCheck = Time.realtimeSinceStartup;

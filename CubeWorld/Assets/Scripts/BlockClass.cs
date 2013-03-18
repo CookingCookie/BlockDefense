@@ -54,8 +54,7 @@ public class BlockClass : MonoBehaviour
 		return m_itemQuantity.GetItemQuantity(actuallSelectedCube);
 	}
 	public int GetIntAvailabilityOfCubes(int selectedItem)
-	{
-		//actuallSelectedCube = GetActuallSelectedCube();
+	{		
 		return m_itemQuantity.GetIntItemQuantity(selectedItem);
 	}
 	public void SetAvailabilityOfCubes(int itemQuantity)
@@ -65,7 +64,11 @@ public class BlockClass : MonoBehaviour
 	public GameObject locateBlock()
 	{
 		actuallSelectedCube = GetActuallSelectedCube();		
-		switch (actuallSelectedCube)
+		return GetBlockName(actuallSelectedCube);
+	}
+	public GameObject GetBlockName(int blockID)
+	{				
+		switch (blockID)
 		{
 		case 0:
 			m_cube = m_cubeDirt;			

@@ -4,8 +4,8 @@ using System.Collections;
 public class ScrollWheel : MonoBehaviour 
 {
 	public BlockClass m_blockClass;
-	float wheelScrool;
-	int selectedItem = 0;
+	private float wheelScrool;
+	private int selectedItem = 0;
     void Update()
 	{
 		if(wheelScrool != Input.GetAxis("Mouse ScrollWheel"))

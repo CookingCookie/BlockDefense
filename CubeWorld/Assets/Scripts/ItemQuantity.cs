@@ -1,10 +1,11 @@
 using UnityEngine;
 using System.Collections;
 
-public class ItemQuantity : MonoBehaviour {
-	bool itemAvailable = false;	
-	int[] itemQuantity = new int[9];
-	int maxItemQuantity = 64;
+public class ItemQuantity : MonoBehaviour 
+{
+	private bool itemAvailable = false;	
+	private int[] itemQuantity = new int[9];
+	private int maxItemQuantity = 64;
 	
 	void Start()
 	{
@@ -19,8 +20,7 @@ public class ItemQuantity : MonoBehaviour {
 		if(itemQuantity[selectedItem] != 0)
 		{
 			itemAvailable = true;
-			itemQuantity[selectedItem]--;
-			//print (itemQuantity[selectedItem]);
+			itemQuantity[selectedItem]--;			
 		}
 		else
 		{

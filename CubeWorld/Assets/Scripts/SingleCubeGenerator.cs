@@ -8,8 +8,7 @@ public class SingleCubeGenerator : MonoBehaviour
 	private GameObject m_cube;		
 	
 	public void CheckGenerateSingleCube(Vector3 cubePos)
-	{		
-		
+	{			
 		if(m_blockClass.GetAvailabilityOfCubes())
 		{
 			GenerateSingleCube(cubePos);			

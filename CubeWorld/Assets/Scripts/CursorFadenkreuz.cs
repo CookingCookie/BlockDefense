@@ -14,7 +14,7 @@ public class CursorFadenkreuz : MonoBehaviour
     }
 	public void SetFadenkreuz()
 	{
-		if(fadenkreuz)
+		if(fadenkreuzEnabled)
 		{
 			fadenkreuzEnabled = false;			
 		}

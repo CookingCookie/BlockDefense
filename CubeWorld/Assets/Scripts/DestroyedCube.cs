@@ -3,19 +3,7 @@ using System.Collections;
 
 public class DestroyedCube : MonoBehaviour 
 {
-	public int destroyedItem;	
-	
-	// Use this for initialization
-	void Start () 
-	{
-	
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
+	public int destroyedItem;
 	public int SetDestroyedCube(GameObject toDestroyingCube)
 	{		
 		
@@ -49,7 +37,7 @@ public class DestroyedCube : MonoBehaviour
 				destroyedItem = 8;
 				break;
 		}
-		print (destroyedItem);
+		//print (destroyedItem);
 		return destroyedItem;
 	}
 }
