@@ -28,6 +28,3 @@ Alle Rechte vorbehalten.
 
 
 
-
-https://dl.dropboxusercontent.com/u/37817357/Maya%20Autodesk%202014.txt
-
